@@ -61,8 +61,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'EDA';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -365,7 +363,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-los-datos">Visualizacion de los datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histograma">Histograma</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boxplot">Boxplot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficas-de-datos-por-mes">Graficas de datos por mes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficas-de-datos-por-ano-mes-y-dia">Graficas de datos por año, mes y dia</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-faltantes">Datos faltantes</a></li>
 </ul>
 </li>
@@ -392,12 +390,12 @@ document.write(`
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="descripcion-de-datos">
 <h1>1. Descripción de datos<a class="headerlink" href="#descripcion-de-datos" title="Permalink to this heading">#</a></h1>
-<p>El siguiente set de datos pertenece a una serie de interacciones registradas en un centro de llamadas por dia a lo largo del tiempo. Los datos estan registrados por fecha identificando si es un dia feriado o no y la cantidad de llamadas resitrada por dia.</p>
-<p>Descripcion de columnas:</p>
+<p>El siguiente set de datos pertenece a una serie de interacciones registradas en un centro de llamadas por día a lo largo del tiempo. Los datos están registrados por fecha identificando si es un día feriado o no y la cantidad de llamadas registrada por día.</p>
+<p>Descripción de columnas:</p>
 <ul class="simple">
 <li><p>Fecha: fecha de los registros.</p></li>
-<li><p>StateHoliday: indicador de dias feriados.</p></li>
-<li><p>Real Calls: numero de llamadas registrado en el dia.</p></li>
+<li><p>StateHoliday: indicador de días feriados.</p></li>
+<li><p>Real Calls: número de llamadas registrado en el día.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -704,8 +702,8 @@ dtype: int64
 </div>
 </div>
 </section>
-<section id="graficas-de-datos-por-mes">
-<h2>Graficas de datos por mes<a class="headerlink" href="#graficas-de-datos-por-mes" title="Permalink to this heading">#</a></h2>
+<section id="graficas-de-datos-por-ano-mes-y-dia">
+<h2>Graficas de datos por año, mes y dia<a class="headerlink" href="#graficas-de-datos-por-ano-mes-y-dia" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dff</span> <span class="o">=</span> <span class="n">df_proyect</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -852,7 +850,7 @@ dtype: int64
 <img alt="_images/ac23ed2228a9360a8a5d155e9e30b15284646875f17fa70e954981b38cd4d85f.png" src="_images/ac23ed2228a9360a8a5d155e9e30b15284646875f17fa70e954981b38cd4d85f.png" />
 </div>
 </div>
-<p>En los graficos anteriores podemos identificar que la serie de tiempo de llamadas ha tenido una tendencia positiva a los largo del tiempo, adicional a esto se identifica visualmente una estacionalidad en el comportamiento de las llamadas a lo largo de los meses y mucho mas pronunciada cuando lo vemos por dia, se entiende que los lunes es cuando mayor cantidad de llamadas ingresa y va descendiendo hasta el dia viernes, los sabados y domingos se tienen registros muy bajos de llamadas.</p>
+<p>En los gráficos anteriores podemos identificar que la serie de tiempo de llamadas ha tenido una tendencia positiva a los largo del tiempo, adicional a esto se identifica visualmente una estacionalidad en el comportamiento de las llamadas a lo largo de los meses y mucho más pronunciada cuando lo vemos por día, se entiende que los lunes es cuando mayor cantidad de llamadas ingresa y va descendiendo hasta el día viernes, los sábados y domingos se tienen registros muy bajos de llamadas.</p>
 </section>
 <section id="datos-faltantes">
 <h2>Datos faltantes<a class="headerlink" href="#datos-faltantes" title="Permalink to this heading">#</a></h2>
@@ -887,10 +885,10 @@ dtype: int64
 <span class="c1">#df_test_statistic, df_p_value, df_critical_values</span>
 
 <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Hipotesis:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Hipótesis:&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;H0: Serie no estacionaria&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;H1: Serie estacionaria&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Estadistico de prueba:</span><span class="si">{</span><span class="n">test_stat</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Estadístico de prueba:</span><span class="si">{</span><span class="n">test_stat</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;p-value:</span><span class="si">{</span><span class="n">p_value</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Alpha: </span><span class="si">{</span><span class="n">alpha</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">p_value</span> <span class="o">&gt;</span> <span class="n">alpha</span><span class="p">:</span>
@@ -901,10 +899,10 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hipotesis:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hipótesis:
 H0: Serie no estacionaria
 H1: Serie estacionaria
-Estadistico de prueba:-2.4421
+Estadístico de prueba:-2.4421
 p-value:0.1302
 Alpha: 0.05
 No se rechaza H0, por lo tanto la serie no es estacionaria.
@@ -955,91 +953,6 @@ No se rechaza H0, por lo tanto la serie no es estacionaria.
 <img alt="_images/f364c99395f3ff05a87e02f3bfd5360d996033fac52fad66f2706b1896632598.png" src="_images/f364c99395f3ff05a87e02f3bfd5360d996033fac52fad66f2706b1896632598.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dff_comp</span><span class="o">=</span><span class="n">df_proyect</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">dff_comp</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;FECHA&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">dff_comp</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>StateHoliday</th>
-      <th>REAL CALLS</th>
-    </tr>
-    <tr>
-      <th>FECHA</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2020-02-01</th>
-      <td>0.0</td>
-      <td>293.0</td>
-    </tr>
-    <tr>
-      <th>2020-02-02</th>
-      <td>0.0</td>
-      <td>29.0</td>
-    </tr>
-    <tr>
-      <th>2020-02-03</th>
-      <td>0.0</td>
-      <td>2881.0</td>
-    </tr>
-    <tr>
-      <th>2020-02-04</th>
-      <td>0.0</td>
-      <td>2776.0</td>
-    </tr>
-    <tr>
-      <th>2020-02-05</th>
-      <td>0.0</td>
-      <td>2586.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">adfuller</span><span class="p">(</span><span class="n">df_proyect</span><span class="p">[</span><span class="s1">&#39;REAL CALLS&#39;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ADF Statistic: </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;p-value: </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ADF Statistic: -2.442081
-p-value: 0.130210
-</pre></div>
-</div>
-</div>
-</div>
-<ul class="simple">
-<li><p>Dado que el valor crítico, el estadístico ADF =-2,442081 &gt; -2,5,-3,4,-2,8 (valores <span class="math notranslate nohighlight">\(t\)</span> en intervalos de confianza de 1%,5% y 10%), se acepta la hipótesis nula (<span class="math notranslate nohighlight">\(H_{0}\)</span>).</p></li>
-<li><p>p-valor = 0,130210 &gt; 0,05. Dado que el valor <span class="math notranslate nohighlight">\(p\)</span> de Adfuller es mayor que un determinado valor alfa especificado (5%, nivel de significación o intervalo de confianza del 95%), se acepta la hipótesis nula (<span class="math notranslate nohighlight">\(H_{0}\)</span>), es decir, <strong>la serie temporal no es estacionaria</strong>.</p></li>
-</ul>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="transformacion-de-serie-no-estacionaria-a-estacionaria">
 <h1>4. Transformacion de serie no estacionaria a estacionaria<a class="headerlink" href="#transformacion-de-serie-no-estacionaria-a-estacionaria" title="Permalink to this heading">#</a></h1>
@@ -1056,7 +969,7 @@ p-value: 0.130210
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">)})</span>
 
-<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_proyect</span><span class="p">[</span><span class="s1">&#39;REAL CALLS&#39;</span><span class="p">]);</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Original Series&#39;</span><span class="p">)</span>
 <span class="n">plot_acf</span><span class="p">(</span><span class="n">df_proyect</span><span class="p">[</span><span class="s1">&#39;REAL CALLS&#39;</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">lags</span> <span class="o">=</span> <span class="mi">1300</span><span class="p">);</span>
 
@@ -1065,20 +978,11 @@ p-value: 0.130210
 
 <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_proyect</span><span class="p">[</span><span class="s1">&#39;REAL CALLS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">diff</span><span class="p">());</span> <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;2nd Order Differencing&#39;</span><span class="p">)</span>
 <span class="n">plot_acf</span><span class="p">(</span><span class="n">df_proyect</span><span class="p">[</span><span class="s1">&#39;REAL CALLS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">(),</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">lags</span> <span class="o">=</span> <span class="mi">1300</span><span class="p">);</span>
-
-<span class="n">axes</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_proyect</span><span class="p">[</span><span class="s1">&#39;REAL CALLS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">diff</span><span class="p">());</span> <span class="n">axes</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;3nd Order Differencing&#39;</span><span class="p">)</span>
-<span class="n">plot_acf</span><span class="p">(</span><span class="n">df_proyect</span><span class="p">[</span><span class="s1">&#39;REAL CALLS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">(),</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">lags</span> <span class="o">=</span> <span class="mi">1300</span><span class="p">);</span>
-
-<span class="n">axes</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_proyect</span><span class="p">[</span><span class="s1">&#39;REAL CALLS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">diff</span><span class="p">());</span> <span class="n">axes</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;4nd Order Differencing&#39;</span><span class="p">)</span>
-<span class="n">plot_acf</span><span class="p">(</span><span class="n">df_proyect</span><span class="p">[</span><span class="s1">&#39;REAL CALLS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">(),</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">lags</span> <span class="o">=</span> <span class="mi">1300</span><span class="p">);</span>
-
-<span class="n">axes</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_proyect</span><span class="p">[</span><span class="s1">&#39;REAL CALLS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">diff</span><span class="p">());</span> <span class="n">axes</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;5nd Order Differencing&#39;</span><span class="p">)</span>
-<span class="n">plot_acf</span><span class="p">(</span><span class="n">df_proyect</span><span class="p">[</span><span class="s1">&#39;REAL CALLS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">(),</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">lags</span> <span class="o">=</span> <span class="mi">1300</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/01358997b69495212999ff95d52e43693130243b5f0da8048635d833e8f08e59.png" src="_images/01358997b69495212999ff95d52e43693130243b5f0da8048635d833e8f08e59.png" />
+<img alt="_images/60287eb8242d12cd436062cf11f3a0fbefdc7d1fab95790e1dbd58c572a23e21.png" src="_images/60287eb8242d12cd436062cf11f3a0fbefdc7d1fab95790e1dbd58c572a23e21.png" />
 </div>
 </div>
 <section id="primera-diferenciacion">
@@ -1098,10 +1002,10 @@ p-value: 0.130210
 <span class="c1">#df_test_statistic, df_p_value, df_critical_values</span>
 
 <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Hipotesis:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Hipótesis:&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;H0: Serie no estacionaria&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;H1: Serie estacionaria&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Estadistico de prueba:</span><span class="si">{</span><span class="n">test_stat</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Estadístico de prueba:</span><span class="si">{</span><span class="n">test_stat</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;p-value:</span><span class="si">{</span><span class="n">p_value</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Alpha: </span><span class="si">{</span><span class="n">alpha</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">p_value</span> <span class="o">&gt;</span> <span class="n">alpha</span><span class="p">:</span>
@@ -1112,10 +1016,10 @@ p-value: 0.130210
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hipotesis:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hipótesis:
 H0: Serie no estacionaria
 H1: Serie estacionaria
-Estadistico de prueba:-12.4786
+Estadístico de prueba:-12.4786
 p-value:0.0000
 Alpha: 0.05
 Se rechaza H0, por lo tanto la serie es estacionaria.
@@ -1194,7 +1098,7 @@ Se rechaza H0, por lo tanto la serie es estacionaria.
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-los-datos">Visualizacion de los datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histograma">Histograma</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boxplot">Boxplot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficas-de-datos-por-mes">Graficas de datos por mes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficas-de-datos-por-ano-mes-y-dia">Graficas de datos por año, mes y dia</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-faltantes">Datos faltantes</a></li>
 </ul>
 </li>
